@@ -52,13 +52,23 @@ function displayQuestion() {
 
   const questionContainer = document.getElementById('question-container');
   
+  // Render the question, allowing for KaTeX formulas to be included
   questionContainer.innerHTML = `
     <div class="question">
-      <p>${currentQuestionIndex + 1}. ${questionData.question}</p>
+      <p>${currentQuestionIndex + 1}. ${renderMath(questionData.question)}</p>
       ${renderOptions(shuffledOptions, correctAnswer)}
       <button onclick="nextQuestion()">Next</button>
     </div>
   `;
+
+  // Re-render any math formulas in the question text and options using KaTeX
+  renderMathInElement(questionContainer);
+}
+
+// Function to render math formulas using KaTeX
+function renderMath(text) {
+  // This will convert any LaTeX-style math to KaTeX-compatible HTML
+  return text.replace(/\$([^\$]+)\$/g, '\\($1\\)'); // Inline math: $...$
 }
 
 // Shuffle the options
@@ -75,7 +85,7 @@ function renderOptions(shuffledOptions, correctAnswer) {
     return `
       <label>
         <input type="radio" name="question${currentQuestionIndex}" value="${key}" onclick="storeAnswer('${key}', '${correctAnswer}')">
-        ${value}
+        ${renderMath(value)} <!-- Render KaTeX in the answer option -->
       </label>
     `;
   }).join('');

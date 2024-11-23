@@ -2,80 +2,80 @@
     {
       "question": "What is the formula for Newton's Second Law?",
       "options": {
-        "a": "F = ma",
-        "b": "F = mv",
-        "c": "F = m/g",
-        "d": "F = ma^2"
+        "a": "$F = ma$",
+        "b": "$F = mv$",
+        "c": "$F = \\frac{m}{g}$",
+        "d": "$F = ma^2$"
       },
       "answer": "a"
     },
     {
       "question": "What is the unit of force?",
       "options": {
-        "a": "Newton",
-        "b": "Joule",
-        "c": "Meter",
-        "d": "Kelvin"
+        "a": "$\\mathrm{Newton}$",
+        "b": "$\\mathrm{Joule}$",
+        "c": "$\\mathrm{Meter}$",
+        "d": "$\\mathrm{Kelvin}$"
       },
       "answer": "a"
     },
     {
       "question": "What is the speed of light in vacuum?",
       "options": {
-        "a": "3 x 10^8 m/s",
-        "b": "2.998 x 10^8 m/s",
-        "c": "3 x 10^6 m/s",
-        "d": "300,000 m/s"
+        "a": "$299~792~458 \\ \\mathrm{m/s}$",
+        "b": "$2.998 \\cdot 10^8 \\ \\mathrm{m/s}$",
+        "c": "$3 \\cdot 10^6 \\ \\mathrm{m/s}$",
+        "d": "$300~000 \\ \\mathrm{m/s}$"
       },
       "answer": "a"
     },
     {
       "question": "What is the value of the gravitational constant?",
       "options": {
-        "a": "6.674 x 10^-11 N·m²/kg²",
-        "b": "9.8 m/s²",
-        "c": "1.6 x 10^-19 C",
-        "d": "3 x 10^8 m/s"
+        "a": "$6.674 \\cdot 10^{-11} \\ \\mathrm{N\\cdot m^2 /kg^2}$",
+        "b": "$9.8 \\ \\mathrm{m/s^2}$",
+        "c": "$1.6 \\cdot 10^{-19} \\ \\mathrm{C}$",
+        "d": "$3 \\cdot 10^8 \\ \\mathrm{m/s}$"
       },
       "answer": "a"
     },
     {
       "question": "What is the SI unit of energy?",
       "options": {
-        "a": "Joule",
-        "b": "Newton",
-        "c": "Watt",
-        "d": "Coulomb"
+        "a": "$\\mathrm{Joule}$",
+        "b": "$\\mathrm{Newton}$",
+        "c": "$\\mathrm{Watt}$",
+        "d": "$\\mathrm{Coulomb}$"
       },
       "answer": "a"
     },
     {
       "question": "What is the formula for kinetic energy?",
       "options": {
-        "a": "KE = 1/2 mv²",
-        "b": "KE = mv",
-        "c": "KE = mgh",
-        "d": "KE = 1/2 m/g"
+        "a": "$E_k = \\frac{1}{2} mv^2$",
+        "b": "$E_k = mv$",
+        "c": "$E_k = mgh$",
+        "d": "$E_k = \\frac{1}{2} \\frac{m}{g}$"
       },
       "answer": "a"
     },
     {
       "question": "What is the wavelength of visible light?",
       "options": {
-        "a": "400-700 nm",
-        "b": "10^6 nm",
-        "c": "10^-9 m",
-        "d": "1 m"
+        "a": "$400-700 \\ \\mathrm{nm}$",
+        "b": "$10^6 \\ \\mathrm{nm}$",
+        "c": "$10^{-9} \\ \\mathrm{m}$",
+        "d": "$1 \\ \\mathrm{m}$"
       },
       "answer": "a"
     },
     {
       "question": "Which of these is a scalar quantity?",
       "options": {
-        "a": "Mass",
-        "b": "Velocity",
-        "c": "Acceleration",
-        "d": "Force"
+        "a": "$\\mathrm{Mass}$",
+        "b": "$\\mathrm{Velocity}$",
+        "c": "$\\mathrm{Acceleration}$",
+        "d": "$\\mathrm{Force}$"
       },
       "answer": "a"
     },
@@ -92,12 +92,11 @@
     {
       "question": "What is the unit of electrical resistance?",
       "options": {
-        "a": "Ohm",
-        "b": "Volt",
-        "c": "Ampere",
-        "d": "Coulomb"
+        "a": "$\\mathrm{Ohm}$",
+        "b": "$\\mathrm{Volt}$",
+        "c": "$\\mathrm{Ampere}$",
+        "d": "$\\mathrm{Coulomb}$"
       },
       "answer": "a"
     }
-  ]
-  
+]
