@@ -44,32 +44,50 @@ function displayQuestion() {
     return;
   }
 
+  // Shuffle the options and keep track of the correct answer
+  const shuffledOptions = shuffleOptions(questionData.options);
+
+  // Store the correct answer index in the shuffled options for reference
+  const correctAnswer = questionData.answer;
+
   const questionContainer = document.getElementById('question-container');
   
   questionContainer.innerHTML = `
     <div class="question">
       <p>${currentQuestionIndex + 1}. ${questionData.question}</p>
-      ${renderOptions(questionData.options)}
+      ${renderOptions(shuffledOptions, correctAnswer)}
       <button onclick="nextQuestion()">Next</button>
     </div>
   `;
 }
 
-// Render the multiple-choice options
-function renderOptions(options) {
-  return Object.keys(options).map(key => {
+// Shuffle the options
+function shuffleOptions(options) {
+  const shuffled = Object.entries(options)
+    .map(([key, value]) => ({ key, value }))  // Convert to an array of objects
+    .sort(() => Math.random() - 0.5); // Shuffle the options
+  return shuffled;
+}
+
+// Render the multiple-choice options with shuffled answers
+function renderOptions(shuffledOptions, correctAnswer) {
+  return shuffledOptions.map(({ key, value }) => {
     return `
       <label>
-        <input type="radio" name="question${currentQuestionIndex}" value="${key}" onclick="storeAnswer('${key}')">
-        ${options[key]}
+        <input type="radio" name="question${currentQuestionIndex}" value="${key}" onclick="storeAnswer('${key}', '${correctAnswer}')">
+        ${value}
       </label>
     `;
   }).join('');
 }
 
 // Store the user's answer for the current question
-function storeAnswer(answer) {
-  userAnswers[currentQuestionIndex] = answer;
+function storeAnswer(answer, correctAnswer) {
+  // Ensure that the correct answer is stored in case the options are shuffled
+  userAnswers[currentQuestionIndex] = {
+    answer: answer,
+    correctAnswer: correctAnswer
+  };
 }
 
 // Move to the next question
@@ -83,8 +101,8 @@ function submitQuiz() {
   let score = 0;
 
   for (let i = 0; i < 10; i++) {
-    const question = quizQuestions[i];
-    if (userAnswers[i] === question.answer) {
+    const userAnswer = userAnswers[i];
+    if (userAnswer && userAnswer.answer === userAnswer.correctAnswer) {
       score++;
     }
   }
