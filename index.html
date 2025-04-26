@@ -5,18 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Physics Quiz</title>
     <link rel="stylesheet" href="style.css">
-    <script src="scripts.js"></script>
+    <script src="scripts.js" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css">
     <script src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"></script>
 </head>
 <body>
-  <div class="quiz-container">
-    <h1>Physics Quiz</h1>
-    <div id="question-container"></div>
-    <button id="submit-btn" style="background-color: #e03d3d;"onclick="submitQuiz()">Submit</button>
-    <div id="result-container"></div>
-  </div>
+
+    <div class="setup-container" id="setup-container">
+        <h1>Select Quiz Options</h1>
+
+        <div class="option-group">
+            <label for="language-select">Select Language:</label>
+            <select id="language-select">
+                <option value="en">English</option>
+                <option value="cs">Čeština</option>
+                </select>
+        </div>
+
+        <div class="option-group">
+            <label for="json-select">Select Quiz Topic:</label>
+            <select id="json-select">
+                <option value="physics.json">Physics</option>
+                <option value="mg-kvíz.json">Matematika (CZ)</option>
+                </select>
+        </div>
+
+        <button id="start-quiz-btn">Start Quiz</button>
+    </div>
+
+    <div class="quiz-container" id="quiz-container" style="display: none;">
+        <h1>Quiz Title</h1> <div id="question-container"></div>
+        <div id="result-container"></div>
+    </div>
+
 </body>
 </html>
